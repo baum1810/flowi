@@ -14,7 +14,12 @@ domain = "https://flownew.vercel.app/"
 
 
 # dont touch the shit under this line if u dont know what you are doing
-options = uc.ChromeOptions()
+
+# cookie check
+if "s%3A" not in cookie:
+    print("YOU NEED TO IMPORT YOUR FLOW.TK COOKIE FOR THIS TO WORK! GOTO https://github.com/baum1810/flowi#setup")
+    time.sleep(100)
+else: options = uc.ChromeOptions()
 driver = uc.Chrome()
 driver.get(domain)
 driver.add_cookie({'name' : 'COOKIE', 'value' : cookie})
